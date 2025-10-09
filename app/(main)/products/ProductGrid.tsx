@@ -1,8 +1,8 @@
 // components/products/ProductGrid.tsx
-'use client';
+"use client";
 
-import React from 'react';
-import ProductCard from './ProductCard';
+import React from "react";
+import ProductCard from "./ProductCard";
 
 type ProductType = {
   id: string | number;
@@ -14,7 +14,13 @@ type ProductType = {
   stock?: number;
 };
 
-export default function ProductGrid({ products, onAdd }: { products: ProductType[]; onAdd?: (id:any)=>void; }) {
+export default function ProductGrid({
+  products,
+  onAdd,
+}: {
+  products: ProductType[];
+  onAdd?: (id: any) => void;
+}) {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
       {products.map((p) => (

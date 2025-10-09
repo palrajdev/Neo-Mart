@@ -1,20 +1,19 @@
-"use client"
+"use client";
 import { Form } from "@heroui/form";
 import { Input } from "@heroui/input";
 import { Button } from "@heroui/button";
 import { useState } from "react";
 
-
 export default function RegisterForm() {
   const [errors, setErrors] = useState({});
 
-  const onSubmit = (e:any) => {
+  const onSubmit = (e: any) => {
     e.preventDefault();
 
     const data = Object.fromEntries(new FormData(e.currentTarget));
 
     if (!data.username) {
-      setErrors({username: "Username is required"});
+      setErrors({ username: "Username is required" });
 
       return;
     }
@@ -40,7 +39,7 @@ export default function RegisterForm() {
 }
 
 // Fake server used in this example.
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+
 // function callServer(data) {
 //   return {
 //     errors: {
@@ -48,4 +47,3 @@ export default function RegisterForm() {
 //     },
 //   };
 // }
-

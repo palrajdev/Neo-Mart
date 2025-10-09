@@ -3,43 +3,23 @@ import { Button } from "@heroui/button";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-interface Product {
-  id: string;
-  title: string;
-  image: string;
-  price: number;
-  short?: string;
-  description?: string;
-  stock?: number;
-  badge?: string;
-}
-
-async function getProduct(id: string): Promise<Product | null> {
-    console.log("Entered to view product", );
-    
-  // Mock example — replace with API call or database query
-  const products: Product[] = [
-    {
-      id: "neo-001",
-      title: "Premium Charcoal - 5kg",
-      image: "/images/5-kg-pack.png",
-      price: 299,
-      short: "Pure & eco-friendly charcoal",
-      description:
-        "This charcoal is made from sustainable sources and burns cleanly for longer use.",
-      stock: 10,
-      badge: "Best Seller",
-    },
-  ];
-  return products.find((p) => p.id === "neo-001") || null;
-}
-
 export default async function ProductPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
-  const product = await getProduct(params.id);
+  const { id } = await params; // id available if needed
+  const product = {
+    id: "neo-001",
+    title: "Premium Charcoal - 5kg",
+    image: "/images/5-kg-pack.png",
+    price: 299,
+    short: "Pure & eco-friendly charcoal",
+    description:
+      "This charcoal is made from sustainable sources and burns cleanly for longer use.",
+    stock: 10,
+    badge: "Best Seller",
+  };
 
   if (!product) return notFound();
 

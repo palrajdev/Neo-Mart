@@ -6,7 +6,14 @@ import clsx from "clsx";
 import { Providers } from "./providers";
 
 import { siteConfig } from "@/config/site";
-import { fontSans, fontMono, fontSerif, fontDisplay, fontBody, fontHeading } from "@/config/fonts";
+import {
+  fontSans,
+  fontMono,
+  fontSerif,
+  fontDisplay,
+  fontBody,
+  fontHeading,
+} from "@/config/fonts";
 
 export const metadata: Metadata = {
   title: {

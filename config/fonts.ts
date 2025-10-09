@@ -1,10 +1,10 @@
-import { 
-  Fira_Code as FontMono, 
+import {
+  Fira_Code as FontMono,
   Inter as FontSans,
   Playfair_Display as FontSerif,
   Poppins as FontDisplay,
   Roboto as FontBody,
-  Montserrat as FontHeading
+  Montserrat as FontHeading,
 } from "next/font/google";
 
 export const fontSans = FontSans({

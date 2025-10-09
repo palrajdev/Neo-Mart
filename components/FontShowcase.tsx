@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const FontShowcase = () => {
   return (
@@ -8,26 +8,37 @@ const FontShowcase = () => {
           Multiple Font Implementation Guide
         </h1>
         <p className="font-body text-lg text-gray-600">
-          Your ecommerce portal now supports multiple fonts for different use cases
+          Your ecommerce portal now supports multiple fonts for different use
+          cases
         </p>
       </div>
 
       {/* Font Examples */}
       <div className="grid gap-8">
-        
         {/* Heading Font - Montserrat */}
         <div className="border rounded-lg p-6">
           <h2 className="font-heading text-2xl font-bold mb-3 text-blue-600">
             Heading Font (Montserrat)
           </h2>
           <div className="space-y-2">
-            <h1 className="font-heading text-4xl font-black">Main Product Title</h1>
-            <h2 className="font-heading text-3xl font-bold">Category Headers</h2>
-            <h3 className="font-heading text-2xl font-semibold">Section Titles</h3>
-            <h4 className="font-heading text-xl font-medium">Subsection Headers</h4>
+            <h1 className="font-heading text-4xl font-black">
+              Main Product Title
+            </h1>
+            <h2 className="font-heading text-3xl font-bold">
+              Category Headers
+            </h2>
+            <h3 className="font-heading text-2xl font-semibold">
+              Section Titles
+            </h3>
+            <h4 className="font-heading text-xl font-medium">
+              Subsection Headers
+            </h4>
           </div>
           <p className="text-sm text-gray-500 mt-3">
-            Usage: <code className="font-mono bg-gray-100 px-2 py-1 rounded">font-heading</code>
+            Usage:{" "}
+            <code className="font-mono bg-gray-100 px-2 py-1 rounded">
+              font-heading
+            </code>
           </p>
         </div>
 
@@ -38,11 +49,18 @@ const FontShowcase = () => {
           </h2>
           <div className="space-y-2">
             <div className="font-display text-5xl font-light">$299.99</div>
-            <div className="font-display text-3xl font-medium">Special Offer!</div>
-            <div className="font-display text-2xl font-semibold">Featured Products</div>
+            <div className="font-display text-3xl font-medium">
+              Special Offer!
+            </div>
+            <div className="font-display text-2xl font-semibold">
+              Featured Products
+            </div>
           </div>
           <p className="text-sm text-gray-500 mt-3">
-            Usage: <code className="font-mono bg-gray-100 px-2 py-1 rounded">font-display</code>
+            Usage:{" "}
+            <code className="font-mono bg-gray-100 px-2 py-1 rounded">
+              font-display
+            </code>
           </p>
         </div>
 
@@ -53,18 +71,23 @@ const FontShowcase = () => {
           </h2>
           <div className="font-body space-y-3">
             <p className="text-base">
-              This is the main body text font used for product descriptions, 
-              user reviews, and general content throughout your ecommerce portal.
+              This is the main body text font used for product descriptions,
+              user reviews, and general content throughout your ecommerce
+              portal.
             </p>
             <p className="text-sm">
-              Smaller text for additional details, specifications, and fine print.
+              Smaller text for additional details, specifications, and fine
+              print.
             </p>
             <p className="text-lg font-medium">
               Emphasized body text for important information.
             </p>
           </div>
           <p className="text-sm text-gray-500 mt-3">
-            Usage: <code className="font-mono bg-gray-100 px-2 py-1 rounded">font-body</code>
+            Usage:{" "}
+            <code className="font-mono bg-gray-100 px-2 py-1 rounded">
+              font-body
+            </code>
           </p>
         </div>
 
@@ -76,14 +99,18 @@ const FontShowcase = () => {
           <div className="font-serif space-y-3">
             <h3 className="text-3xl font-bold">Luxury Collection</h3>
             <p className="text-lg">
-              Perfect for premium product lines, testimonials, and elegant branding elements.
+              Perfect for premium product lines, testimonials, and elegant
+              branding elements.
             </p>
             <blockquote className="text-xl italic border-l-4 border-gray-300 pl-4">
               "An exceptional shopping experience with unmatched quality."
             </blockquote>
           </div>
           <p className="text-sm text-gray-500 mt-3">
-            Usage: <code className="font-mono bg-gray-100 px-2 py-1 rounded">font-serif</code>
+            Usage:{" "}
+            <code className="font-mono bg-gray-100 px-2 py-1 rounded">
+              font-serif
+            </code>
           </p>
         </div>
 
@@ -94,8 +121,8 @@ const FontShowcase = () => {
           </h2>
           <div className="font-sans space-y-3">
             <p className="text-base">
-              This is your default sans-serif font, great for navigation, buttons, 
-              forms, and general UI elements.
+              This is your default sans-serif font, great for navigation,
+              buttons, forms, and general UI elements.
             </p>
             <div className="flex gap-4">
               <button className="bg-blue-500 text-white px-4 py-2 rounded font-medium">
@@ -107,7 +134,11 @@ const FontShowcase = () => {
             </div>
           </div>
           <p className="text-sm text-gray-500 mt-3">
-            Usage: <code className="font-mono bg-gray-100 px-2 py-1 rounded">font-sans</code> (default)
+            Usage:{" "}
+            <code className="font-mono bg-gray-100 px-2 py-1 rounded">
+              font-sans
+            </code>{" "}
+            (default)
           </p>
         </div>
 
@@ -127,7 +158,10 @@ const FontShowcase = () => {
             </code>
           </div>
           <p className="text-sm text-gray-500 mt-3">
-            Usage: <code className="font-mono bg-gray-100 px-2 py-1 rounded">font-mono</code>
+            Usage:{" "}
+            <code className="font-mono bg-gray-100 px-2 py-1 rounded">
+              font-mono
+            </code>
           </p>
         </div>
       </div>
@@ -138,12 +172,30 @@ const FontShowcase = () => {
           Font Usage Guidelines for Ecommerce
         </h3>
         <div className="font-body space-y-3 text-blue-700">
-          <div><strong>Headings (font-heading):</strong> Product titles, category names, section headers</div>
-          <div><strong>Display (font-display):</strong> Prices, promotional text, call-to-action elements</div>
-          <div><strong>Body (font-body):</strong> Product descriptions, reviews, general content</div>
-          <div><strong>Serif (font-serif):</strong> Premium branding, testimonials, luxury products</div>
-          <div><strong>Sans (font-sans):</strong> Navigation, buttons, forms, UI elements (default)</div>
-          <div><strong>Mono (font-mono):</strong> Product codes, tracking numbers, technical specs</div>
+          <div>
+            <strong>Headings (font-heading):</strong> Product titles, category
+            names, section headers
+          </div>
+          <div>
+            <strong>Display (font-display):</strong> Prices, promotional text,
+            call-to-action elements
+          </div>
+          <div>
+            <strong>Body (font-body):</strong> Product descriptions, reviews,
+            general content
+          </div>
+          <div>
+            <strong>Serif (font-serif):</strong> Premium branding, testimonials,
+            luxury products
+          </div>
+          <div>
+            <strong>Sans (font-sans):</strong> Navigation, buttons, forms, UI
+            elements (default)
+          </div>
+          <div>
+            <strong>Mono (font-mono):</strong> Product codes, tracking numbers,
+            technical specs
+          </div>
         </div>
       </div>
     </div>

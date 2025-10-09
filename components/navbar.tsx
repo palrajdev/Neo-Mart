@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import {
   Navbar as HeroUINavbar,
   NavbarContent,
@@ -9,19 +9,13 @@ import {
   NavbarMenuItem,
 } from "@heroui/navbar";
 import { Button } from "@heroui/button";
-import { Kbd } from "@heroui/kbd";
 import { Link } from "@heroui/link";
 import { Input } from "@heroui/input";
-import { link as linkStyles } from "@heroui/theme";
 import NextLink from "next/link";
 import { Badge } from "@heroui/react";
-import clsx from "clsx";
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
-import {
-  GithubIcon,
-  SearchIcon
-} from "@/components/icons";
+import { GithubIcon, SearchIcon } from "@/components/icons";
 import Logo from "./Logo";
 
 export const Navbar = () => {
@@ -56,12 +50,11 @@ export const Navbar = () => {
       {/* Left: Logo */}
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
-          <NextLink
-            className="flex justify-start items-end gap-0.5"
-            href="/"
-          >
+          <NextLink className="flex justify-start items-end gap-0.5" href="/">
             <Logo />
-            <p className="font-bold relative top-[6px] text-[#A3B18A]">eoMart</p>
+            <p className="font-bold relative top-[6px] text-[#A3B18A]">
+              eoMart
+            </p>
           </NextLink>
         </NavbarBrand>
       </NavbarContent>
@@ -89,7 +82,13 @@ export const Navbar = () => {
           <NextLink href="/cart" className="flex items-center gap-2 relative">
             {/* Wrap only the icon with Badge */}
             <div className="relative">
-              <Badge color="primary" content="5" variant="faded" size="md" placement="top-right">
+              <Badge
+                color="primary"
+                content="5"
+                variant="faded"
+                size="md"
+                placement="top-right"
+              >
                 <span className="text-2xl">🛒</span>
               </Badge>
             </div>
@@ -135,6 +134,5 @@ export const Navbar = () => {
         </div>
       </NavbarMenu>
     </HeroUINavbar>
-
   );
 };

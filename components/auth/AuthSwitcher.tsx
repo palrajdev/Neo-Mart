@@ -1,51 +1,58 @@
 // components/auth/AuthSwitcher.tsx
-'use client'
-import React, { useEffect, useRef, useState } from 'react'
-import LoginForm from './LoginForm'
-import RegisterForm from './RegisterForm'
-import { Card, CardHeader, CardBody } from '@heroui/card'
-import { Button } from '@heroui/button'
-import clsx from 'clsx'
+"use client";
+import React, { useEffect, useRef, useState } from "react";
+import LoginForm from "./LoginForm";
+import RegisterForm from "./RegisterForm";
+import { Card, CardHeader, CardBody } from "@heroui/card";
+import { Button } from "@heroui/button";
+import clsx from "clsx";
 
-type Mode = 'login' | 'register'
+type Mode = "login" | "register";
 
 export default function AuthSwitcher({
-  initialMode = 'login',
-  className = '',
+  initialMode = "login",
+  className = "",
   onAuthSuccess,
 }: {
-  initialMode?: Mode
-  className?: string
+  initialMode?: Mode;
+  className?: string;
   /** called after successful login/register (forms can call this via prop) */
-  onAuthSuccess?: () => void
+  onAuthSuccess?: () => void;
 }) {
-  const [mode, setMode] = useState<Mode>(initialMode)
-  const containerRef = useRef<HTMLDivElement | null>(null)
+  const [mode, setMode] = useState<Mode>(initialMode);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   // sync if parent passes a different initialMode
   useEffect(() => {
-    setMode(initialMode)
-  }, [initialMode])
+    setMode(initialMode);
+  }, [initialMode]);
 
   // when switching, focus first input inside the active form
   useEffect(() => {
     const t = setTimeout(() => {
-      const container = containerRef.current
-      if (!container) return
-      const el = container.querySelector<HTMLInputElement>('input, [tabindex]:not([tabindex="-1"])')
-      el?.focus()
-    }, 120) // wait for transition
-    return () => clearTimeout(t)
-  }, [mode])
+      const container = containerRef.current;
+      if (!container) return;
+      const el = container.querySelector<HTMLInputElement>(
+        'input, [tabindex]:not([tabindex="-1"])',
+      );
+      el?.focus();
+    }, 120); // wait for transition
+    return () => clearTimeout(t);
+  }, [mode]);
 
-  const title = mode === 'login' ? 'Welcome back' : 'Create your account'
+  const title = mode === "login" ? "Welcome back" : "Create your account";
   const subtitle =
-    mode === 'login'
-      ? 'Sign in to your NeoMart account to view orders, checkout faster and manage your addresses.'
-      : 'Create your NeoMart account to start shopping — it only takes a minute.'
+    mode === "login"
+      ? "Sign in to your NeoMart account to view orders, checkout faster and manage your addresses."
+      : "Create your NeoMart account to start shopping — it only takes a minute.";
 
   return (
-    <div className={clsx('min-h-[64vh] flex items-center justify-center px-4', className)}>
+    <div
+      className={clsx(
+        "min-h-[64vh] flex items-center justify-center px-4",
+        className,
+      )}
+    >
       <Card className="w-full max-w-md">
         <CardHeader className="flex items-start justify-between gap-3 md:gap-6 p-6">
           <div>
@@ -53,25 +60,33 @@ export default function AuthSwitcher({
             <p className="text-sm text-muted-foreground mt-1">{subtitle}</p>
           </div>
 
-          <div role="tablist" aria-label="Authentication tabs" className="inline-flex rounded-md bg-muted p-1">
+          <div
+            role="tablist"
+            aria-label="Authentication tabs"
+            className="inline-flex rounded-md bg-muted p-1"
+          >
             <Button
-              variant={mode === 'login' ? 'flat' : 'ghost'}
-              className={clsx('rounded-md px-3 py-1 text-sm', mode === 'login' ? 'font-semibold' : '')}
-              onClick={() => setMode('login')}
-              aria-pressed={mode === 'login'}
+              variant={mode === "login" ? "flat" : "ghost"}
+              className={clsx(
+                "rounded-md px-3 py-1 text-sm",
+                mode === "login" ? "font-semibold" : "",
+              )}
+              onClick={() => setMode("login")}
               role="tab"
-              aria-selected={mode === 'login'}
+              aria-selected={mode === "login"}
             >
               Login
             </Button>
 
             <Button
-              variant={mode === 'register' ? 'flat' : 'ghost'}
-              className={clsx('rounded-md px-3 py-1 text-sm', mode === 'register' ? 'font-semibold' : '')}
-              onClick={() => setMode('register')}
-              aria-pressed={mode === 'register'}
+              variant={mode === "register" ? "flat" : "ghost"}
+              className={clsx(
+                "rounded-md px-3 py-1 text-sm",
+                mode === "register" ? "font-semibold" : "",
+              )}
+              onClick={() => setMode("register")}
               role="tab"
-              aria-selected={mode === 'register'}
+              aria-selected={mode === "register"}
             >
               Register
             </Button>
@@ -83,12 +98,12 @@ export default function AuthSwitcher({
               This avoids unmount/mount flicker for screen readers and keeps focus consistent. */}
           <div ref={containerRef} className="relative h-auto">
             <div
-              aria-hidden={mode !== 'login'}
+              aria-hidden={mode !== "login"}
               className={clsx(
-                'transition-all duration-200 ease-in-out',
-                mode === 'login'
-                  ? 'opacity-100 translate-y-0 pointer-events-auto'
-                  : 'opacity-0 -translate-y-2 pointer-events-none absolute inset-0'
+                "transition-all duration-200 ease-in-out",
+                mode === "login"
+                  ? "opacity-100 translate-y-0 pointer-events-auto"
+                  : "opacity-0 -translate-y-2 pointer-events-none absolute inset-0",
               )}
             >
               {/* Provide onSuccess callback so child can notify parent */}
@@ -97,7 +112,7 @@ export default function AuthSwitcher({
                 <span>Don't have an account? </span>
                 <button
                   type="button"
-                  onClick={() => setMode('register')}
+                  onClick={() => setMode("register")}
                   className="text-primary underline-offset-2 hover:underline ml-1"
                 >
                   Create one
@@ -106,12 +121,12 @@ export default function AuthSwitcher({
             </div>
 
             <div
-              aria-hidden={mode !== 'register'}
+              aria-hidden={mode !== "register"}
               className={clsx(
-                'transition-all duration-200 ease-in-out',
-                mode === 'register'
-                  ? 'opacity-100 translate-y-0 pointer-events-auto'
-                  : 'opacity-0 -translate-y-2 pointer-events-none absolute inset-0'
+                "transition-all duration-200 ease-in-out",
+                mode === "register"
+                  ? "opacity-100 translate-y-0 pointer-events-auto"
+                  : "opacity-0 -translate-y-2 pointer-events-none absolute inset-0",
               )}
             >
               <RegisterForm onSuccess={onAuthSuccess} />
@@ -119,7 +134,7 @@ export default function AuthSwitcher({
                 <span>Already have an account? </span>
                 <button
                   type="button"
-                  onClick={() => setMode('login')}
+                  onClick={() => setMode("login")}
                   className="text-primary underline-offset-2 hover:underline ml-1"
                 >
                   Sign in
@@ -130,5 +145,5 @@ export default function AuthSwitcher({
         </CardBody>
       </Card>
     </div>
-  )
+  );
 }

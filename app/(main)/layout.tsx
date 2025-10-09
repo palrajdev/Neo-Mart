@@ -1,9 +1,12 @@
 // app/(main)/layout.tsx
 import React from "react";
 import { Navbar } from "@/components/navbar";
-import { Link } from "@heroui/link";
 
-export default function MainLayout({ children }: { children: React.ReactNode }) {
+export default function MainLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <div className="relative flex flex-col h-screen">
       <Navbar />

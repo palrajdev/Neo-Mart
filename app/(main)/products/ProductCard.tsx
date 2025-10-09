@@ -1,26 +1,26 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { motion } from 'framer-motion'
-import { Button } from '@heroui/button'
+import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { Button } from "@heroui/button";
 
 export interface Product {
-  id: string | number
-  title: string
-  image: string
-  price: number
-  badge?: string
-  short?: string
-  stock?: number
+  id: string | number;
+  title: string;
+  image: string;
+  price: number;
+  badge?: string;
+  short?: string;
+  stock?: number;
 }
 
 export default function ProductCard({
   product,
   onAdd,
-  className = '',
+  className = "",
 }: {
-  product: Product
-  onAdd?: (id: any) => void
-  className?: string
+  product: Product;
+  onAdd?: (id: any) => void;
+  className?: string;
 }) {
   return (
     <motion.article
@@ -61,13 +61,21 @@ export default function ProductCard({
 
         <h3 className="text-lg font-semibold line-clamp-2">{product.title}</h3>
 
-        {product.short && <p className="text-sm text-gray-500 mt-1 line-clamp-2">{product.short}</p>}
+        {product.short && (
+          <p className="text-sm text-gray-500 mt-1 line-clamp-2">
+            {product.short}
+          </p>
+        )}
 
         <div className="mt-4 flex items-start justify-between">
           {/* price + stock + standalone view link (outside buttons) */}
           <div>
-            <div className="text-lg font-semibold text-emerald-600">₹{product.price}</div>
-            <div className="text-xs text-gray-500">{product.stock && product.stock > 0 ? 'In stock' : 'Out of stock'}</div>
+            <div className="text-lg font-semibold text-emerald-600">
+              ₹{product.price}
+            </div>
+            <div className="text-xs text-gray-500">
+              {product.stock && product.stock > 0 ? "In stock" : "Out of stock"}
+            </div>
 
             {/* "View" shown here as well (outside the button group) for easy access on non-hover devices */}
             <div className="mt-2">
@@ -108,5 +116,5 @@ export default function ProductCard({
         </div>
       </div>
     </motion.article>
-  )
+  );
 }
